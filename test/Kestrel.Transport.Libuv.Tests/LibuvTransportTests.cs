@@ -91,7 +91,6 @@ namespace Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.Tests
 
         [ConditionalTheory]
         [MemberData(nameof(OneToTen))]
-        [OSSkipCondition(OperatingSystems.MacOSX, SkipReason = "Tests fail on OS X due to low file descriptor limit.")]
         public async Task OneToTenThreads(int threadCount)
         {
             var listenOptions = new ListenOptions(new IPEndPoint(IPAddress.Loopback, 0));
